@@ -16,6 +16,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'ext.giix.giix-components.*', // giix components
 	),
 
 	'modules'=>array(
@@ -28,6 +29,14 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
 		*/
+		'gii' => array(
+			'class' => 'system.gii.GiiModule',
+			'generatorPaths' => array(
+				'ext.giix.giix-core', // giix generators
+			),
+			'password' => 'root',
+			'ipFilters'=>array('127.0.0.1','::1')
+		),
 	),
 
 	// application components
