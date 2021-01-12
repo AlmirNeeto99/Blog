@@ -11,6 +11,7 @@ INSERT INTO `categories`(`title`) VALUES("Financeiro"), ("Integrações"),("Serv
 CREATE TABLE IF NOT EXISTS `posts`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `category_id` INT UNSIGNED NOT NULL,
+    `content` TINYTEXT NOT NULL,
     `author` VARCHAR(255) NOT NULL,
     `date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     
