@@ -1,9 +1,15 @@
-CREATE TABLE tbl_user (
+/*Creating categories table*/
+CREATE TABLE categories(
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(128) NOT NULL,
-    password VARCHAR(128) NOT NULL,
-    email VARCHAR(128) NOT NULL
+    title VARCHAR(255) NOT NULL
 );
+/*Inserting default categories into their tables*/
+INSERT INTO categories("Financeiro");
+INSERT INTO categories("Integrações");
+INSERT INTO categories("Serviços");
+INSERT INTO categories("Agenda");
+INSERT INTO categories("Parceiros");
+INSERT INTO categories("Outros");
 
 INSERT INTO tbl_user (username, password, email) VALUES ('test1', 'pass1', 'test1@example.com');
 INSERT INTO tbl_user (username, password, email) VALUES ('test2', 'pass2', 'test2@example.com');
