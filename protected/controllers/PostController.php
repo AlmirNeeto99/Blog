@@ -123,9 +123,36 @@ class PostController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider = new CActiveDataProvider('Post');
+		$categoria = null;
+		$criteria = [];
+		$errors = [];
+
+		if (isset($_GET['categoria']) && !empty($_GET['categoria'])) {
+			if (!is_numeric($_GET['categoria'])) {
+				array_push($errors, "Campo categoria deve ser um número inteiro");
+			} else {
+				$categoria = intval($_GET['categoria']);
+				array_push($criteria, "categoria_id=" . $categoria);
+			}
+		}
+		if (isset($_GET['inicio']) && !empty($_GET['inicio'])) {
+			array_push($criteria, "data>='" . $_GET['inicio'] . "'");
+		}
+		if (isset($_GET['fim']) && !empty($_GET['fim'])) {
+			array_push($criteria, "data>='" . $_GET['fim'] . "'");
+		}
+		$criteria = join(" AND ", $criteria);
+		$dataProvider = new CActiveDataProvider(
+			'Post',
+			array(
+				"criteria" => array(
+					'condition' => $criteria
+				)
+			)
+		);
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
+			'errors' => $errors
 		));
 	}
 
