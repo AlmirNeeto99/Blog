@@ -21,6 +21,14 @@ $this->menu = array(
 	'method' => 'get',
 )); ?>
 <div class="row">
+	<?php if (!empty($errors)) { ?>
+		<div class="col-12">
+			<?php $this->widget("ErrorLog", array(
+				"errors" => $errors
+			)) ?>
+		</div>
+	<?php } ?>
+
 	<div class="col-12 col-md-6">
 		<div class="form-group">
 			<label for="">
@@ -30,7 +38,11 @@ $this->menu = array(
 			<select name="categoria" id="" class="form-control">
 				<option value="">Selecione</option>
 				<?php foreach ($categorias as $categoria) { ?>
-					<option value="<?= $categoria->id ?>"><?= $categoria->nome; ?></option>
+					<option value="<?= $categoria->id ?>" <?php if (
+																isset($_GET['categoria']) &&
+																!empty($_GET['categoria']) &&
+																$_GET['categoria'] == $categoria->id
+															) echo 'selected'; ?>><?= $categoria->nome; ?></option>
 				<?php } ?>
 			</select>
 		</div>
@@ -41,13 +53,13 @@ $this->menu = array(
 				<label for="">
 					De:
 				</label>
-				<input type="date" name="inicio" id="" class="form-control">
+				<input type="date" name="inicio" id="" class="form-control" value="<?= isset($_GET['inicio']) ? $_GET['inicio'] : "" ?>">
 			</div>
 			<div class="col-12 col-md-6">
 				<label for="">
 					Até
 				</label>
-				<input type="date" name="fim" id="" class="form-control">
+				<input type="date" name="fim" id="" class="form-control" value="<?= isset($_GET['fim']) ? $_GET['fim'] : "" ?>">
 			</div>
 		</div>
 	</div>
@@ -68,5 +80,7 @@ $this->menu = array(
 	'itemView' => '_view',
 	"pagerCssClass" => 'pagination',
 	'summaryText' => 'Exibindo resultados de {start} a {end} - {count} encontrados',
-	'summaryCssClass' => 'alert alert-secondary'
+	'summaryCssClass' => 'alert alert-secondary',
+	'emptyCssClass' => 'alert alert-danger',
+	'emptyText' => "Nenhum post foi encontrado"
 )); ?>
