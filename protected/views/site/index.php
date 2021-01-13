@@ -11,7 +11,7 @@ $this->pageTitle = Yii::app()->name;
 				<?php echo CHtml::encode(Yii::app()->name); ?>
 			</h1>
 		</div>
-		<div class="col-12 col-md-6 border-bottom border-success mx-auto my-3"></div>
+		<div class="col-12 col-md-6 border-bottom border-conexa mx-auto my-3"></div>
 	</div>
 	<div class="row">
 		<div class="col-12">
@@ -32,20 +32,25 @@ $this->pageTitle = Yii::app()->name;
 			<div class="col-12">
 				<div class="row">
 					<?php foreach ($posts as $post) : ?>
-						<div class="col-12 col-md-4">
+
+						<div class="col-12 my-1 col-md-4 animate__animated animate__fadeInUp">
 							<div class="card">
-								<div class="card-header">
-									<h4>
-										Post #<?= $post->id; ?>
-									</h4>
-								</div>
 								<div class="card-body">
 									<div class="card-content">
+										<h4>
+											Post #<?= $post->id; ?>
+										</h4>
+										<div class="w-25 bg-conexa" style="height: 1px;"></div>
+										<p class="mb-0">
+											<small>
+												<?= $post->category->title ?>
+											</small>
+										</p>
 										<?= $post->content; ?>
 									</div>
 								</div>
 								<div class="card-footer">
-									<p>
+									<p class="mb-0">
 										Por: <strong><?= $post->author; ?></strong>
 									</p>
 									<p class="mb-0">
