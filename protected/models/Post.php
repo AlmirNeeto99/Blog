@@ -21,7 +21,7 @@ class Post extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return Post the static model class
 	 */
-	public static function model($className=__CLASS__)
+	public static function model($className = __CLASS__)
 	{
 		return parent::model($className);
 	}
@@ -43,11 +43,11 @@ class Post extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('categoria_id, conteudo, autor, data', 'required'),
-			array('categoria_id', 'length', 'max'=>10),
-			array('autor', 'length', 'max'=>255),
+			array('categoria_id', 'length', 'max' => 10),
+			array('autor', 'length', 'max' => 255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, categoria_id, conteudo, autor, data', 'safe', 'on'=>'search'),
+			array('id, categoria_id, conteudo, autor, data', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -87,16 +87,16 @@ class Post extends CActiveRecord
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
 
-		$criteria=new CDbCriteria;
+		$criteria = new CDbCriteria;
 
-		$criteria->compare('id',$this->id,true);
-		$criteria->compare('categoria_id',$this->categoria_id,true);
-		$criteria->compare('conteudo',$this->conteudo,true);
-		$criteria->compare('autor',$this->autor,true);
-		$criteria->compare('data',$this->data,true);
+		$criteria->compare('id', $this->id, true);
+		$criteria->compare('categoria_id', $this->categoria_id, true);
+		$criteria->compare('conteudo', $this->conteudo, true);
+		$criteria->compare('autor', $this->autor, true);
+		$criteria->compare('data', $this->data, true);
 
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria' => $criteria,
 		));
 	}
 }
