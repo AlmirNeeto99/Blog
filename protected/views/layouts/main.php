@@ -52,7 +52,7 @@
 			</form> -->
 		</div>
 	</nav>
-	<div class="container vh-100" id="page">
+	<div class="container min-vh-100" id="page">
 		<?php if (isset($this->breadcrumbs)) : ?>
 			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 				'links' => $this->breadcrumbs,
