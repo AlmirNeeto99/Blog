@@ -2,28 +2,37 @@
 /* @var $this PostController */
 /* @var $data Post */
 ?>
+<div class="card my-1">
+	<div class="card-body">
+		<ul class="list-unstyled">
+			<li>
+				<b>
+					<?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:
+				</b>
+				<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
+			</li>
+			<li>
+				<b>
+					<?php echo CHtml::encode($data->getAttributeLabel('categoria_nome')); ?>:
+				</b>
+				<?php echo CHtml::encode($data->categoria->nome); ?>
 
-<div class="view">
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('categoria_id')); ?>:</b>
-	<?php echo CHtml::encode($data->categoria_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('conteudo')); ?>:</b>
-	<?php echo CHtml::encode($data->conteudo); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('autor')); ?>:</b>
-	<?php echo CHtml::encode($data->autor); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('data')); ?>:</b>
-	<?php echo CHtml::encode($data->data); ?>
-	<br />
-
-
+			</li>
+			<li>
+				<b>
+					<?php echo CHtml::encode($data->getAttributeLabel('conteudo')); ?>:
+				</b>
+				<?php echo CHtml::encode($data->conteudo); ?>
+			</li>
+			<li>
+				<b>
+					<?php echo CHtml::encode($data->getAttributeLabel('autor')); ?>:
+				</b>
+				<?php echo CHtml::encode($data->autor); ?>
+			</li>
+		</ul>
+	</div>
+	<div class="card-footer">
+		Em: <?php echo date("d/m/Y H:i", strtotime($data->data)); ?>
+	</div>
 </div>
