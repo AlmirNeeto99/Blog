@@ -15,4 +15,6 @@ $this->menu = array(
 
 <h1>Cadastrar Post</h1>
 
+<?php $this->widget("Divider"); ?>
+
 <?php echo $this->renderPartial('_form', array('model' => $model)); ?>
