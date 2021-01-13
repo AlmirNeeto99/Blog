@@ -20,13 +20,18 @@ $this->pageTitle = Yii::app()->name;
 			</h2>
 		</div>
 		<?php if (empty($posts)) : ?>
-			<div class="alert alert-danger my-4">
-				<h3>
-					Oops... Nenhum post encontrado.
-				</h3>
-				<p>
-					Tente novamente mais tarde.
-				</p>
+			<div class="col-12 col-md-6 mx-auto">
+				<div class="alert alert-danger my-4 text-center">
+					<p>
+						<i class="far fa-3x fa-sad-cry"></i>
+					</p>
+					<h3>
+						Ops... Nenhum post encontrado.
+					</h3>
+					<p>
+						Tente novamente mais tarde.
+					</p>
+				</div>
 			</div>
 		<?php else : ?>
 			<div class="col-12">
