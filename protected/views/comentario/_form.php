@@ -1,13 +1,13 @@
 <?php
-/* @var $this CommentController */
-/* @var $model Comment */
+/* @var $this ComentarioController */
+/* @var $model Comentario */
 /* @var $form CActiveForm */
 ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'comment-form',
+	'id'=>'comentario-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -22,21 +22,21 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'commentary'); ?>
-		<?php echo $form->textField($model,'commentary',array('size'=>60,'maxlength'=>150)); ?>
-		<?php echo $form->error($model,'commentary'); ?>
+		<?php echo $form->labelEx($model,'texto'); ?>
+		<?php echo $form->textField($model,'texto',array('size'=>60,'maxlength'=>150)); ?>
+		<?php echo $form->error($model,'texto'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'author'); ?>
-		<?php echo $form->textField($model,'author',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'author'); ?>
+		<?php echo $form->labelEx($model,'autor'); ?>
+		<?php echo $form->textField($model,'autor',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'autor'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'date'); ?>
-		<?php echo $form->textField($model,'date'); ?>
-		<?php echo $form->error($model,'date'); ?>
+		<?php echo $form->labelEx($model,'data'); ?>
+		<?php echo $form->textField($model,'data'); ?>
+		<?php echo $form->error($model,'data'); ?>
 	</div>
 
 	<div class="row buttons">

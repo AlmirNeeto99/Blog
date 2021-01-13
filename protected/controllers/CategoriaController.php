@@ -1,6 +1,6 @@
 <?php
 
-class CommentController extends Controller
+class CategoriaController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,14 +62,14 @@ class CommentController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Comment;
+		$model=new Categoria;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Comment']))
+		if(isset($_POST['Categoria']))
 		{
-			$model->attributes=$_POST['Comment'];
+			$model->attributes=$_POST['Categoria'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +91,9 @@ class CommentController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Comment']))
+		if(isset($_POST['Categoria']))
 		{
-			$model->attributes=$_POST['Comment'];
+			$model->attributes=$_POST['Categoria'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +122,7 @@ class CommentController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Comment');
+		$dataProvider=new CActiveDataProvider('Categoria');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class CommentController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Comment('search');
+		$model=new Categoria('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Comment']))
-			$model->attributes=$_GET['Comment'];
+		if(isset($_GET['Categoria']))
+			$model->attributes=$_GET['Categoria'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -150,7 +150,7 @@ class CommentController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Comment::model()->findByPk($id);
+		$model=Categoria::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -162,7 +162,7 @@ class CommentController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='comment-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='categoria-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

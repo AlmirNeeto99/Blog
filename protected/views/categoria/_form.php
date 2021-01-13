@@ -1,13 +1,13 @@
 <?php
-/* @var $this CategoryController */
-/* @var $model Category */
+/* @var $this CategoriaController */
+/* @var $model Categoria */
 /* @var $form CActiveForm */
 ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'category-form',
+	'id'=>'categoria-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -16,9 +16,9 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'title'); ?>
+		<?php echo $form->labelEx($model,'nome'); ?>
+		<?php echo $form->textField($model,'nome',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'nome'); ?>
 	</div>
 
 	<div class="row buttons">

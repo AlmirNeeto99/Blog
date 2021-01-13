@@ -1,21 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "category".
+ * This is the model class for table "comentario".
  *
- * The followings are the available columns in table 'category':
+ * The followings are the available columns in table 'comentario':
  * @property string $id
- * @property string $title
+ * @property string $post_id
+ * @property string $texto
+ * @property string $autor
+ * @property string $data
  *
  * The followings are the available model relations:
- * @property Post[] $posts
+ * @property Post $post
  */
-class Category extends CActiveRecord
+class Comentario extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Category the static model class
+	 * @return Comentario the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -27,7 +30,7 @@ class Category extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'category';
+		return 'comentario';
 	}
 
 	/**
@@ -38,11 +41,13 @@ class Category extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'required'),
-			array('title', 'length', 'max'=>255),
+			array('post_id, texto, autor, data', 'required'),
+			array('post_id', 'length', 'max'=>10),
+			array('texto', 'length', 'max'=>150),
+			array('autor', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title', 'safe', 'on'=>'search'),
+			array('id, post_id, texto, autor, data', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,7 +59,7 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'posts' => array(self::HAS_MANY, 'Post', 'category_id'),
+			'post' => array(self::BELONGS_TO, 'Post', 'post_id'),
 		);
 	}
 
@@ -65,7 +70,10 @@ class Category extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
+			'post_id' => 'Post',
+			'texto' => 'Texto',
+			'autor' => 'Autor',
+			'data' => 'Data',
 		);
 	}
 
@@ -81,7 +89,10 @@ class Category extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('title',$this->title,true);
+		$criteria->compare('post_id',$this->post_id,true);
+		$criteria->compare('texto',$this->texto,true);
+		$criteria->compare('autor',$this->autor,true);
+		$criteria->compare('data',$this->data,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -1,6 +1,6 @@
 <?php
-/* @var $this CommentController */
-/* @var $model Comment */
+/* @var $this ComentarioController */
+/* @var $model Comentario */
 /* @var $form CActiveForm */
 ?>
 
@@ -22,18 +22,18 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'commentary'); ?>
-		<?php echo $form->textField($model,'commentary',array('size'=>60,'maxlength'=>150)); ?>
+		<?php echo $form->label($model,'texto'); ?>
+		<?php echo $form->textField($model,'texto',array('size'=>60,'maxlength'=>150)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'author'); ?>
-		<?php echo $form->textField($model,'author',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'autor'); ?>
+		<?php echo $form->textField($model,'autor',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'date'); ?>
-		<?php echo $form->textField($model,'date'); ?>
+		<?php echo $form->label($model,'data'); ?>
+		<?php echo $form->textField($model,'data'); ?>
 	</div>
 
 	<div class="row buttons">

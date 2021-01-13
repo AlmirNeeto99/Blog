@@ -1,24 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "comment".
+ * This is the model class for table "categoria".
  *
- * The followings are the available columns in table 'comment':
+ * The followings are the available columns in table 'categoria':
  * @property string $id
- * @property string $post_id
- * @property string $commentary
- * @property string $author
- * @property string $date
+ * @property string $nome
  *
  * The followings are the available model relations:
- * @property Post $post
+ * @property Post[] $posts
  */
-class Comment extends CActiveRecord
+class Categoria extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Comment the static model class
+	 * @return Categoria the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -30,7 +27,7 @@ class Comment extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'comment';
+		return 'categoria';
 	}
 
 	/**
@@ -41,13 +38,11 @@ class Comment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('post_id, commentary, author, date', 'required'),
-			array('post_id', 'length', 'max'=>10),
-			array('commentary', 'length', 'max'=>150),
-			array('author', 'length', 'max'=>255),
+			array('nome', 'required'),
+			array('nome', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, post_id, commentary, author, date', 'safe', 'on'=>'search'),
+			array('id, nome', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,7 +54,7 @@ class Comment extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'post' => array(self::BELONGS_TO, 'Post', 'post_id'),
+			'posts' => array(self::HAS_MANY, 'Post', 'categoria_id'),
 		);
 	}
 
@@ -70,10 +65,7 @@ class Comment extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'post_id' => 'Post',
-			'commentary' => 'Commentary',
-			'author' => 'Author',
-			'date' => 'Date',
+			'nome' => 'Nome',
 		);
 	}
 
@@ -89,10 +81,7 @@ class Comment extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('post_id',$this->post_id,true);
-		$criteria->compare('commentary',$this->commentary,true);
-		$criteria->compare('author',$this->author,true);
-		$criteria->compare('date',$this->date,true);
+		$criteria->compare('nome',$this->nome,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -1,6 +1,6 @@
 <?php
 
-class CategoryController extends Controller
+class ComentarioController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,14 +62,14 @@ class CategoryController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Category;
+		$model=new Comentario;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Category']))
+		if(isset($_POST['Comentario']))
 		{
-			$model->attributes=$_POST['Category'];
+			$model->attributes=$_POST['Comentario'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +91,9 @@ class CategoryController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Category']))
+		if(isset($_POST['Comentario']))
 		{
-			$model->attributes=$_POST['Category'];
+			$model->attributes=$_POST['Comentario'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +122,7 @@ class CategoryController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Category');
+		$dataProvider=new CActiveDataProvider('Comentario');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class CategoryController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Category('search');
+		$model=new Comentario('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Category']))
-			$model->attributes=$_GET['Category'];
+		if(isset($_GET['Comentario']))
+			$model->attributes=$_GET['Comentario'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -150,7 +150,7 @@ class CategoryController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Category::model()->findByPk($id);
+		$model=Comentario::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -162,7 +162,7 @@ class CategoryController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='category-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='comentario-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

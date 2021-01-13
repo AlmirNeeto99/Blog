@@ -1,6 +1,6 @@
 <?php
-/* @var $this CategoryController */
-/* @var $data Category */
+/* @var $this CategoriaController */
+/* @var $data Categoria */
 ?>
 
 <div class="view">
@@ -9,8 +9,8 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
-	<?php echo CHtml::encode($data->title); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('nome')); ?>:</b>
+	<?php echo CHtml::encode($data->nome); ?>
 	<br />
 
 

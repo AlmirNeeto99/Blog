@@ -1,6 +1,6 @@
 <?php
-/* @var $this PostController */
-/* @var $data Post */
+/* @var $this ComentarioController */
+/* @var $data Comentario */
 ?>
 
 <div class="view">
@@ -9,12 +9,12 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('categoria_id')); ?>:</b>
-	<?php echo CHtml::encode($data->categoria_id); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('post_id')); ?>:</b>
+	<?php echo CHtml::encode($data->post_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('conteudo')); ?>:</b>
-	<?php echo CHtml::encode($data->conteudo); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('texto')); ?>:</b>
+	<?php echo CHtml::encode($data->texto); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('autor')); ?>:</b>

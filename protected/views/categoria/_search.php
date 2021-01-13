@@ -1,6 +1,6 @@
 <?php
-/* @var $this CategoryController */
-/* @var $model Category */
+/* @var $this CategoriaController */
+/* @var $model Categoria */
 /* @var $form CActiveForm */
 ?>
 
@@ -17,8 +17,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->label($model,'nome'); ?>
+		<?php echo $form->textField($model,'nome',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row buttons">
