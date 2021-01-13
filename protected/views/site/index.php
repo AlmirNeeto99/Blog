@@ -48,19 +48,19 @@ $this->pageTitle = Yii::app()->name;
 										<div class="w-25 bg-conexa" style="height: 1px;"></div>
 										<p class="mb-0">
 											<small>
-												<?= $post->category->title ?>
+												<?= $post->categoria->nome ?>
 											</small>
 										</p>
-										<?= $post->content; ?>
+										<?= $post->conteudo; ?>
 									</div>
 								</div>
 								<div class="card-footer">
 									<p class="mb-0">
-										Por: <strong><?= $post->author; ?></strong>
+										Por: <strong><?= $post->autor; ?></strong>
 									</p>
 									<p class="mb-0">
 										<small>
-											Em: <?= date("d/m/Y H:i", strtotime($post->date)); ?>
+											Em: <?= date("d/m/Y H:i", strtotime($post->data)); ?>
 										</small>
 									</p>
 								</div>
