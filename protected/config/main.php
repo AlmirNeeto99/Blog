@@ -16,7 +16,8 @@ return array(
 	'import' => array(
 		'application.models.*',
 		'application.components.*',
-		'ext.giix-components.*', // giix components
+		'ext.giix-components.*', // giix components,
+		'application.widgets.*'
 	),
 
 	'modules' => array(
