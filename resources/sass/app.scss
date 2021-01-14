@@ -33,3 +33,26 @@
     }
   }
 }
+
+.separator {
+  position: relative;
+  margin: 5px 0;
+  width: 100%;
+  text-align: center;
+  &::after,
+  &::before {
+    position: absolute;
+    width: 45%;
+    height: 1px;
+    content: "";
+    top: 15px;
+    background-color: rgb(141, 136, 136);
+  }
+
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
+}
