@@ -54,6 +54,11 @@ $this->pageTitle = Yii::app()->name;
 									</div>
 								</div>
 								<div class="card-footer">
+									<p class="mb-0 text-muted">
+										<small>
+											<?= $post->comentariosCount == 0 ? "Nenhum comentário" : $post->comentariosCount . " comentarios" ?>
+										</small>
+									</p>
 									<p class="mb-0">
 										Por: <strong><?= $post->autor; ?></strong>
 									</p>
