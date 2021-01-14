@@ -38,7 +38,7 @@ $this->pageTitle = Yii::app()->name;
 				<div class="row">
 					<?php foreach ($posts as $post) : ?>
 						<div class="col-12 my-1 col-md-6 col-lg-4 animate__animated animate__fadeInUp">
-							<div class="card shadow">
+							<div class="card shadow h-100">
 								<div class="card-body">
 									<div class="card-content">
 										<h4>
