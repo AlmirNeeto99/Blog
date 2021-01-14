@@ -1,40 +1,28 @@
-<?php
-/* @var $this PostController */
-/* @var $data Post */
-?>
-<div class="col-12 col-md-6">
-	<div class="card my-2 shadow">
+<div class="col-12 my-1 col-md-4 animate__animated animate__fadeInUp">
+	<div class="card shadow">
 		<div class="card-body">
-			<ul class="list-unstyled">
-				<li>
-					<b>
-						<?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:
-					</b>
-					<?php echo CHtml::link(CHtml::encode("#" . $data->id), array('view', 'id' => $data->id)); ?>
-				</li>
-				<li>
-					<b>
-						<?php echo CHtml::encode($data->getAttributeLabel('categoria_nome')); ?>:
-					</b>
-					<?php echo CHtml::encode($data->categoria->nome); ?>
-
-				</li>
-				<li>
-					<b>
-						<?php echo CHtml::encode($data->getAttributeLabel('conteudo')); ?>:
-					</b>
-					<?php echo CHtml::encode($data->conteudo); ?>
-				</li>
-				<li>
-					<b>
-						<?php echo CHtml::encode($data->getAttributeLabel('autor')); ?>:
-					</b>
-					<?php echo CHtml::encode($data->autor); ?>
-				</li>
-			</ul>
+			<div class="card-content">
+				<h4>
+					Post #<?= $data->id; ?>
+				</h4>
+				<?php $this->widget("Divider", array("size" => "small")) ?>
+				<p class="mb-0">
+					<small>
+						<?= $data->categoria->nome ?>
+					</small>
+				</p>
+				<?= $data->conteudo; ?>
+			</div>
 		</div>
 		<div class="card-footer">
-			Em: <?php echo date("d/m/Y H:i", strtotime($data->data)); ?>
+			<p class="mb-0">
+				Por: <strong><?= $data->autor; ?></strong>
+			</p>
+			<p class="mb-0">
+				<small>
+					Em: <?= date("d/m/Y H:i", strtotime($data->data)); ?>
+				</small>
+			</p>
 		</div>
 	</div>
 </div>
