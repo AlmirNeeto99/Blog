@@ -50,12 +50,17 @@
 
 	</nav>
 	<div class="container min-vh-100 my-3" id="page">
-		<?php if (isset($this->breadcrumbs) && !empty($this->breadcrumbs)) : ?>
-			<?php $this->widget('Breadcrumb', array(
-				'links' => $this->breadcrumbs,
-			)); ?>
-			<!-- breadcrumbs -->
-		<?php endif ?>
+		<div class="row justify-content-end">
+			<div class="col-12 col-md-5">
+				<?php if (isset($this->breadcrumbs) && !empty($this->breadcrumbs)) : ?>
+					<?php $this->widget('Breadcrumb', array(
+						'links' => $this->breadcrumbs,
+					)); ?>
+					<!-- breadcrumbs -->
+				<?php endif ?>
+			</div>
+		</div>
+
 
 		<?php echo $content; ?>
 

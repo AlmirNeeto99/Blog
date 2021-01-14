@@ -1,5 +1,5 @@
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb justify-content-end mr-0">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
         <?php $last = false;
         $index = 0;
