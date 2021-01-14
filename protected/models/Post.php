@@ -42,7 +42,7 @@ class Post extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('categoria_id, conteudo, autor, data', 'required'),
+			array('categoria_id, conteudo, autor', 'required'),
 			array('categoria_id', 'length', 'max' => 10),
 			array('autor', 'length', 'max' => 255),
 			// The following rule is used by search().
@@ -73,7 +73,7 @@ class Post extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'categoria_id' => 'Categoria',
-			'conteudo' => 'Conteudo',
+			'conteudo' => 'Conteúdo',
 			'autor' => 'Autor',
 			'data' => 'Data',
 		);
