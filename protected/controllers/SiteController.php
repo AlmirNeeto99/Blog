@@ -29,9 +29,22 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$posts = Post::model()->with('categoria')->findAll();
+
+		$posts = new CActiveDataProvider(
+			'Post',
+			array(
+				"criteria" => array(
+					"order" => "id DESC",
+					"offset" => 0,
+					"limit" => 9
+				),
+				"pagination" => array(
+					"pageSize" => 9
+				)
+			)
+		);
 		$this->render('index', [
-			"posts" => $posts
+			"posts" => $posts->getData()
 		]);
 	}
 
