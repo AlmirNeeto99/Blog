@@ -61,6 +61,7 @@ class Post extends CActiveRecord
 		return array(
 			'comentarios' => array(self::HAS_MANY, 'Comentario', 'post_id'),
 			'categoria' => array(self::BELONGS_TO, 'Categoria', 'categoria_id'),
+			'comentariosCount' => array(self::STAT, 'Comentario', 'post_id'),
 		);
 	}
 
