@@ -52,6 +52,11 @@ $this->pageTitle = Yii::app()->name;
 										</p>
 										<?= $post->conteudo; ?>
 									</div>
+									<div class="mt-1">
+										<a href="<?= Yii::app()->createUrl("post/view", array("id" => $post->id)) ?>">
+											Ver mais
+										</a>
+									</div>
 								</div>
 								<div class="card-footer">
 									<p class="mb-0 text-muted">
