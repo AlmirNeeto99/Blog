@@ -76,8 +76,18 @@ class PostController extends Controller
 				$this->redirect(array('view', 'id' => $model->id));
 		}
 
+		$categorias = Categoria::model()->findAll();
+
+		$categoriasSelect = [
+			"" => "Selecione"
+		];
+		foreach ($categorias as $categoria) {
+			array_push($categoriasSelect, [$categoria->id => $categoria->nome]);
+		}
+
 		$this->render('create', array(
 			'model' => $model,
+			'categorias' => $categoriasSelect
 		));
 	}
 
