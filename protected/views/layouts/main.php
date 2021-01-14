@@ -72,6 +72,9 @@
 		All Rights Reserved.<br />
 		<?php echo Yii::powered(); ?>
 	</footer>
+
+	<script src="<?= Yii::app()->baseUrl ?>/assets/bootstrap/jquery-3.5.1.min.js"></script>
+	<script src="<?= Yii::app()->baseUrl ?>/assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
