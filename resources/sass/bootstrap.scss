@@ -1,0 +1,14 @@
+$theme-colors: (
+  "conexa": #ea824b,
+  "conexa-light": #e47438b5,
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "../../node_modules/animate.css/animate.min";
+
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.min";
+
+* {
+  font-family: "Blinker", sans-serif;
+}
