@@ -36,11 +36,13 @@ class SiteController extends Controller
 				"criteria" => array(
 					"order" => "id DESC",
 					"offset" => 0,
-					"limit" => 9
+					"limit" => 9,
+					"with" => "comentariosCount"
 				),
 				"pagination" => array(
 					"pageSize" => 9
-				)
+				),
+
 			)
 		);
 		$this->render('index', [
