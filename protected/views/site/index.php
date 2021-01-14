@@ -14,7 +14,7 @@ $this->pageTitle = Yii::app()->name;
 		<div class="col-12 col-md-6 border-bottom border-conexa mx-auto my-3"></div>
 	</div>
 	<div class="row">
-		<div class="col-12">
+		<div class="col-12 my-2">
 			<h2 class="text-center">
 				Veja aqui os posts mais recentes
 			</h2>
@@ -37,15 +37,14 @@ $this->pageTitle = Yii::app()->name;
 			<div class="col-12">
 				<div class="row">
 					<?php foreach ($posts as $post) : ?>
-
 						<div class="col-12 my-1 col-md-4 animate__animated animate__fadeInUp">
-							<div class="card">
+							<div class="card shadow">
 								<div class="card-body">
 									<div class="card-content">
 										<h4>
 											Post #<?= $post->id; ?>
 										</h4>
-										<div class="w-25 bg-conexa" style="height: 1px;"></div>
+										<?php $this->widget("Divider", array("size" => "small")) ?>
 										<p class="mb-0">
 											<small>
 												<?= $post->categoria->nome ?>
@@ -67,6 +66,26 @@ $this->pageTitle = Yii::app()->name;
 							</div>
 						</div>
 					<?php endforeach; ?>
+				</div>
+				<div class="row mt-3">
+					<div class="col-12">
+						<h4>
+							Nossas categorias de posts
+						</h4>
+						<?php $this->widget("Divider", array("size" => "small")) ?>
+					</div>
+				</div>
+				<div class="row">
+					<?php foreach (Categoria::model()->findAll() as $categoria) { ?>
+						<div class="col-12 col-md-4 my-1" style="height:250px">
+							<a href="<?= Yii::app()->createUrl("post/index", array("categoria" => $categoria->id)) ?>" class="d-flex text-decoration-none card-animated bg-conexa-light shadow h-100 border border-conexa justify-content-center align-items-center">
+								<h4 class="text-white text-center">
+									<i class="d-block fas fa-code"></i>
+									<?= $categoria->nome ?>
+								</h4>
+							</a>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 		<?php endif; ?>
