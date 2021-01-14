@@ -52,25 +52,28 @@ class PostController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id, $new = false)
+	public function actionView($id, $new = false, $newComentario = false, $fail = false)
 	{
 
 		$comentario = new Comentario;
 
-		$criteria = new CDbCriteria();
-
-		$criteria->with = array("comentarios" => [
-			"limit" => 1,
-			"order" => "comentarios.id desc"
-		]);
-		$criteria->alias = "posts";
-		$criteria->condition = "posts.id = $id";
-		$post = Post::model()->find($criteria);
+		$comentarios = new CActiveDataProvider(
+			"Comentario",
+			array(
+				"criteria" => array(
+					'condition' => "post_id = $id",
+					'order' => 'id desc'
+				),
+			)
+		);
 
 		$this->render('view', array(
-			'model' => $post,
+			'model' => $this->loadModel($id),
+			'comentarios' => $comentarios->getData(),
 			'comentario' => $comentario,
-			"newRecord" => $new
+			"newRecord" => $new,
+			"newComentario" => $newComentario,
+			"fail" => $fail
 		));
 	}
 
@@ -172,7 +175,8 @@ class PostController extends Controller
 			'Post',
 			array(
 				"criteria" => array(
-					'condition' => $criteria
+					'condition' => $criteria,
+					'order' => 'id desc'
 				),
 				"pagination" => array(
 					"pageSize" => 12
