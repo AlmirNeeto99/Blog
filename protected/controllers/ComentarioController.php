@@ -76,7 +76,7 @@ class ComentarioController extends Controller
 			if ($model->save()) {
 				$this->redirect(array('post/view', 'id' => $model->post->id, "newComentario" => true));
 			} else {
-				$this->redirect(array('post/view', 'id' => $model->post_id));
+				$this->redirect(array('post/view', 'id' => $model->post_id, "fail" => true));
 			}
 		}
 
