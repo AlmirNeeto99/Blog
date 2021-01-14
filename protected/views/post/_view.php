@@ -1,4 +1,4 @@
-<div class="col-12 my-1 col-md-4 animate__animated animate__fadeInUp">
+<div class="col-12 my-1 col-md-6 col-lg-4 animate__animated animate__fadeInUp">
 	<div class="card shadow">
 		<div class="card-body">
 			<div class="card-content">
