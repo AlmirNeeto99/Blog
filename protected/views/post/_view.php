@@ -15,6 +15,11 @@
 			</div>
 		</div>
 		<div class="card-footer">
+			<p class="mb-0 text-muted">
+				<small>
+					<?= $data->comentariosCount == 0 ? "Nenhum comentário" : $post->comentariosCount . " comentarios" ?>
+				</small>
+			</p>
 			<p class="mb-0">
 				Por: <strong><?= $data->autor; ?></strong>
 			</p>
