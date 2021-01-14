@@ -81,8 +81,9 @@ class PostController extends Controller
 		$categoriasSelect = [
 			"" => "Selecione"
 		];
+
 		foreach ($categorias as $categoria) {
-			array_push($categoriasSelect, [$categoria->id => $categoria->nome]);
+			$categoriasSelect=array_merge($categoriasSelect, [$categoria->id => $categoria->nome]);
 		}
 
 		$this->render('create', array(
