@@ -72,6 +72,29 @@ $this->pageTitle = Yii::app()->name;
 						</div>
 					<?php endforeach; ?>
 				</div>
+				<div class="row my-4">
+					<div class="col-12">
+						<?php $this->widget("Divider") ?>
+						<h3 class="text-center">
+							<p class="mb-0">
+								<i class="far fa-grin"></i>
+							</p>
+							Gostou dos nossos posts?
+						</h3>
+						<p class="text-center text-muted">
+							Clique no botão abaixo para verificar nossa listagem completa
+						</p>
+						<div class="text-center">
+							<a href="" class="btn btn-outline-conexa-light mx-auto">
+								Ver mais
+							</a>
+						</div>
+						<div class="separator">Ou</div>
+						<h4 class="text-center">
+							Escolha uma categoria do seu interesse abaixo
+						</h4>
+					</div>
+				</div>
 				<div class="row mt-3">
 					<div class="col-12">
 						<h4>
