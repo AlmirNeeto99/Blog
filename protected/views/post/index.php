@@ -14,7 +14,7 @@ $this->menu = array(
 
 <h1>Posts</h1>
 
-<?php $this->widget("Divider") ?>
+<?php $this->widget("Divider", array("size" => "large")) ?>
 
 <?php $this->beginWidget('CActiveForm', array(
 	'action' => Yii::app()->createUrl($this->route),
@@ -72,7 +72,7 @@ $this->menu = array(
 
 <?php $this->endWidget(); ?>
 
-<?php $this->widget("Divider") ?>
+<?php $this->widget("Divider", array("size" => "large")) ?>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider' => $dataProvider,
@@ -81,6 +81,6 @@ $this->menu = array(
 	"pagerCssClass" => 'pagination',
 	'summaryText' => 'Exibindo resultados de {start} a {end} - {count} encontrados',
 	'summaryCssClass' => 'alert alert-secondary',
-	'emptyCssClass' => 'alert alert-danger',
+	//'emptyCssClass' => 'alert alert-danger',
 	'emptyText' => "Nenhum post foi encontrado"
 )); ?>
