@@ -6,16 +6,26 @@ $this->breadcrumbs = array(
 	'Posts' => array('post/index'),
 	$model->id,
 ); ?>
-<h1 class="mb-4">
-	Post: <strong>#<?= $model->id ?></strong>
-	<?php $this->widget("Divider", array("size" => "small")) ?>
-</h1>
 
 <?php if ($newRecord) : ?>
 	<div class="alert alert-success">
 		Post cadastrado com sucesso
 	</div>
 <?php endif; ?>
+<?php if ($newComentario) : ?>
+	<div class="alert alert-success">
+		Comentário cadastrado com sucesso
+	</div>
+<?php endif; ?>
+<?php if ($fail) : ?>
+	<div class="alert alert-danger">
+		Falha ao salvar comentário
+	</div>
+<?php endif; ?>
+<h1 class="mb-4">
+	Post: <strong>#<?= $model->id ?></strong>
+	<?php $this->widget("Divider", array("size" => "small")) ?>
+</h1>
 <div class="row">
 	<div class="col-12">
 		<p>
@@ -67,27 +77,27 @@ $this->breadcrumbs = array(
 					Esse post ainda não possui comentários
 				</p>
 			</div>
-		<?php else : ?>
-			<ul class="list-group mr-0">
-				<?php foreach ($model->comentarios as $key => $value) { ?>
-					<li class="list-group-item">
-						<p>
-							<small class="text-muted">
-								Em: <?= date("d/m/Y H:i", strtotime($value['data'])); ?>
-							</small>
-						</p>
-						<?= $value['texto'] ?>
-						<p class="mb-0">
-							<small>
-								Por: <?= $value['autor'] ?>
-							</small>
-						</p>
-					</li>
-				<?php } ?>
-			</ul>
 		<?php endif; ?>
 	</div>
-
+	<div class="col-12">
+		<ul class="list-group mr-0">
+			<?php foreach ($comentarios as $key => $value) { ?>
+				<li class="list-group-item">
+					<p>
+						<small class="text-muted">
+							Em: <?= date("d/m/Y H:i", strtotime($value['data'])); ?>
+						</small>
+					</p>
+					<?= $value['texto'] ?>
+					<p class="mb-0">
+						<small>
+							Por: <?= $value['autor'] ?>
+						</small>
+					</p>
+				</li>
+			<?php } ?>
+		</ul>
+	</div>
 
 	<div class="modal fade" id="createComentario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg modal-dialog-centered">
