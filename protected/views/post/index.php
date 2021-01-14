@@ -91,8 +91,8 @@ $this->menu = array(
 <script>
 	function pagination() {
 		$(".yiiPager li").removeClass().addClass("page-item");
-		$(".yiiPager li a").removeClass().addClass("page-link");
-		$(".yiiPager").removeClass().addClass("pagination");
+		$(".yiiPager li a").removeClass().addClass("page-link text-conexa");
+		$(".yiiPager").removeClass().addClass("pagination justify-content-center");
 		$(".pager")
 			.contents()
 			.filter(function() {
