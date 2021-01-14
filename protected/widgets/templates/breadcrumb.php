@@ -8,7 +8,7 @@
             if ($last) { ?>
                 <li class="breadcrumb-item active" aria-current="page"><?= $value ?></li>
             <?php } else { ?>
-                <li class="breadcrumb-item"><a href="<?= $value[0] ?>"><?= $key ?></a></li>
+                <li class="breadcrumb-item"><a href="<?= Yii::app()->createUrl($value[0]) ?>"><?= $key ?></a></li>
         <?php }
             $index++;
         } ?>
