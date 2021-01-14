@@ -74,7 +74,7 @@ class ComentarioController extends Controller
 		if (isset($_POST['Comentario'])) {
 			$model->attributes = $_POST['Comentario'];
 			if ($model->save()) {
-				$this->redirect(array('post/view', 'id' => $model->post->id));
+				$this->redirect(array('post/view', 'id' => $model->post->id, "newComentario" => true));
 			} else {
 				$this->redirect(array('post/view', 'id' => $model->post_id));
 			}
