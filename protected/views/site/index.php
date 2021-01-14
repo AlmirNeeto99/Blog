@@ -46,11 +46,16 @@ $this->pageTitle = Yii::app()->name;
 										</h4>
 										<?php $this->widget("Divider", array("size" => "small")) ?>
 										<p class="mb-0">
-											<small>
+											<small class="text-muted">
 												<?= $post->categoria->nome ?>
 											</small>
 										</p>
-										<?= $post->conteudo; ?>
+										<h5>
+											<?= $post->titulo ?>
+										</h5>
+										<p class="mb-0">
+											<?= $post->conteudo; ?>
+										</p>
 									</div>
 									<div class="mt-1">
 										<a href="<?= Yii::app()->createUrl("post/view", array("id" => $post->id)) ?>">
