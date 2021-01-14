@@ -147,6 +147,9 @@ class PostController extends Controller
 			array(
 				"criteria" => array(
 					'condition' => $criteria
+				),
+				"pagination" => array(
+					"pageSize" => 12
 				)
 			)
 		);
