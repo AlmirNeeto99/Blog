@@ -4,6 +4,7 @@ class Divider extends CWidget
 {
     public $size = null;
     public $color = "conexa";
+    public $centered = false;
     public function init()
     {
         switch ($this->size) {
@@ -14,7 +15,9 @@ class Divider extends CWidget
                 $this->size = "w-100";
                 break;
         }
-        echo "<div class='$this->size bg-$this->color my-2' style='height:1px;'></div>";
+        if ($this->centered) $this->centered = "mx-auto";
+        else $this->centered = "";
+        echo "<div class='$this->size bg-$this->color my-2 $this->centered' style='height:1px;'></div>";
     }
 
     public function run()
