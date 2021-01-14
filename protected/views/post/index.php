@@ -78,14 +78,29 @@ $this->menu = array(
 	'dataProvider' => $dataProvider,
 	'itemsCssClass' => "row",
 	'itemView' => '_view',
-	"pagerCssClass" => 'pagination',
 	'summaryText' => 'Exibindo resultados de {start} a {end} - {count} encontrados',
 	'summaryCssClass' => 'alert alert-secondary',
-	'emptyText' => "",
-	"pagerCssClass" => 'kjksadwq'
+	'emptyText' => ""
 )); ?>
 <?php if (empty($dataProvider->data)) { ?>
 	<div class="alert alert-danger">
 		Nenhum post encontrado
 	</div>
 <?php } ?>
+
+<script>
+	function pagination() {
+		$(".yiiPager li").removeClass().addClass("page-item");
+		$(".yiiPager li a").removeClass().addClass("page-link");
+		$(".yiiPager").removeClass().addClass("pagination");
+		$(".pager")
+			.contents()
+			.filter(function() {
+				return this.nodeType == 3; //Node.TEXT_NODE
+			}).remove();
+	}
+	pagination();
+	$("body").on("ajaxStop", function() {
+		pagination();
+	});
+</script>
