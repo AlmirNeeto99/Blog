@@ -81,6 +81,11 @@ $this->menu = array(
 	"pagerCssClass" => 'pagination',
 	'summaryText' => 'Exibindo resultados de {start} a {end} - {count} encontrados',
 	'summaryCssClass' => 'alert alert-secondary',
-	//'emptyCssClass' => 'alert alert-danger',
-	'emptyText' => "Nenhum post foi encontrado"
+	'emptyText' => "",
+	"pagerCssClass" => 'kjksadwq'
 )); ?>
+<?php if (empty($dataProvider->data)) { ?>
+	<div class="alert alert-danger">
+		Nenhum post encontrado
+	</div>
+<?php } ?>
