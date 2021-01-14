@@ -54,8 +54,16 @@ class PostController extends Controller
 	 */
 	public function actionView($id, $new = false)
 	{
+
+		$comentario = new Comentario;
+
 		$this->render('view', array(
-			'model' => $this->loadModel($id),
+			'model' => $this->loadModel($id)->with(array(
+				"comentarios" => array(
+					"order" => "data ASC"
+				)
+			)),
+			'comentario' => $comentario,
 			"newRecord" => $new
 		));
 	}
