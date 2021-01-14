@@ -6,8 +6,16 @@ $this->breadcrumbs = array(
 	'Posts',
 );
 ?>
-
-<h1>Posts</h1>
+<div class="row">
+	<div class="col-12 col-md-6">
+		<h1>Posts</h1>
+	</div>
+	<div class="col-12 col-md-6 text-right align-self-center">
+		<a href="<?= Yii::app()->createUrl("post/create") ?>" class="btn btn-conexa">
+			Cadastrar um post
+		</a>
+	</div>
+</div>
 
 <?php $this->widget("Divider", array("size" => "large")) ?>
 
