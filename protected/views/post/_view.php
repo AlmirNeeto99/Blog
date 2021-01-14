@@ -15,7 +15,7 @@
 					<?= $data->titulo ?>
 				</h5>
 				<p class="mb-0">
-					<?= $data->conteudo; ?>
+					<?= strlen($data->conteudo) > 25 ? substr($data->conteudo, 0, 25) . "..." : $data->conteudo ?>
 				</p>
 				<div class="mt-1">
 					<a href="<?= Yii::app()->createUrl("post/view", array("id" => $data->id)) ?>">
