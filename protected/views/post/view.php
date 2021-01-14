@@ -16,7 +16,13 @@ $this->menu = array(
 );
 ?>
 
-<h1>View Post #<?php echo $model->id; ?></h1>
+<h1>Visualizar Post #<?php echo $model->id; ?></h1>
+
+<?php if ($newRecord) : ?>
+	<div class="alert alert-success">
+		Post cadastro com sucesso
+	</div>
+<?php endif; ?>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data' => $model,
@@ -27,4 +33,5 @@ $this->menu = array(
 		'autor',
 		'data',
 	),
+	'htmlOptions' => array("class" => 'table table-striped table-bordered')
 )); ?>
