@@ -5,33 +5,103 @@
 $this->breadcrumbs = array(
 	'Posts' => array('post/index'),
 	$model->id,
-);
-
-$this->menu = array(
-	array('label' => 'List Post', 'url' => array('index')),
-	array('label' => 'Create Post', 'url' => array('create')),
-	array('label' => 'Update Post', 'url' => array('update', 'id' => $model->id)),
-	array('label' => 'Delete Post', 'url' => '#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->id), 'confirm' => 'Are you sure you want to delete this item?')),
-	array('label' => 'Manage Post', 'url' => array('admin')),
-);
-?>
-
-<h1>Visualizar Post #<?php echo $model->id; ?></h1>
+); ?>
+<h1 class="mb-4">
+	Post: <strong>#<?= $model->id ?></strong>
+	<?php $this->widget("Divider", array("size" => "small")) ?>
+</h1>
 
 <?php if ($newRecord) : ?>
 	<div class="alert alert-success">
-		Post cadastro com sucesso
+		Post cadastrado com sucesso
 	</div>
 <?php endif; ?>
+<div class="row">
+	<div class="col-12">
+		<p>
+			<small>
+				Categoria: <strong><?= $model->categoria->nome ?></strong>
+			</small>
+		</p>
+		<p class="text">
+			<?= $model->conteudo ?>
+		</p>
+	</div>
+	<div class="col-12">
+		<div class="row">
+			<div class="col-12 col-md-6">
+				<p>
+					Por: <strong><?= $model->autor ?></strong>
+				</p>
+			</div>
+			<div class="col-12 col-md-6">
+				<p class="text-right">
+					Em: <?= date("d/m/Y H:i", strtotime($model->data)); ?>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 my-3">
+		<?php $this->widget("Divider", array("size" => "large")) ?>
+		<div class="row">
+			<div class="col-6 my-2">
+				<h4>
+					<i class="far fa-comment-alt"></i>
+					Comentários
+				</h4>
+			</div>
+			<div class="col-6 text-right">
+				<button data-toggle="modal" class="btn btn-conexa" data-target="#createComentario">
+					Comentar
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="col-12">
+		<?php if ($model->comentariosCount == 0) : ?>
+			<div class="alert alert-danger">
+				<h4>
+					<i class="far fa-frown"></i>
+				</h4>
+				<p class="mb-0">
+					Esse post ainda não possui comentários
+				</p>
+			</div>
+		<?php else : ?>
+			<ul class="list-group mr-0">
+				<?php foreach ($model->comentarios as $key => $value) { ?>
+					<li class="list-group-item">
+						<p>
+							<small class="text-muted">
+								Em: <?= date("d/m/Y H:i", strtotime($value['data'])); ?>
+							</small>
+						</p>
+						<?= $value['texto'] ?>
+						<p class="mb-0">
+							<small>
+								Por: <?= $value['autor'] ?>
+							</small>
+						</p>
+					</li>
+				<?php } ?>
+			</ul>
+		<?php endif; ?>
+	</div>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data' => $model,
-	'attributes' => array(
-		'id',
-		'categoria_id',
-		'conteudo',
-		'autor',
-		'data',
-	),
-	'htmlOptions' => array("class" => 'table table-striped table-bordered')
-)); ?>
+
+	<div class="modal fade" id="createComentario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Comentar</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<?php $this->renderPartial("../comentario/_form", ["model" => $comentario, "post" => $model->id]); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
