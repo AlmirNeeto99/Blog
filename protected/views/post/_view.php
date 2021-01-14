@@ -12,12 +12,17 @@
 					</small>
 				</p>
 				<?= $data->conteudo; ?>
+				<div class="mt-1">
+					<a href="<?= Yii::app()->createUrl("post/view", array("id" => $data->id)) ?>">
+						Ver mais
+					</a>
+				</div>
 			</div>
 		</div>
 		<div class="card-footer">
 			<p class="mb-0 text-muted">
 				<small>
-					<?= $data->comentariosCount == 0 ? "Nenhum comentário" : $post->comentariosCount . " comentarios" ?>
+					<?= $data->comentariosCount == 0 ? "Nenhum comentário" : $data->comentariosCount . " comentarios" ?>
 				</small>
 			</p>
 			<p class="mb-0">
