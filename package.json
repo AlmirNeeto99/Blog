@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^4.5.3",
+    "bundle-js": "^0.1.1",
+    "node-sass": "^5.0.0",
+    "tiny-slider": "^2.9.3",
+    "webpack": "^5.14.0",
+    "webpack-cli": "^4.3.1"
+  },
+  "private": true,
+  "name": "Blog"
+}
