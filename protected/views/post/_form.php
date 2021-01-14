@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model, 'categoria_id'); ?>
-		<?php echo $form->textField($model, 'categoria_id', array('size' => 10, 'maxlength' => 10, 'class' => 'form-control')); ?>
+		<?php echo $form->dropDownList($model, 'categoria_id', $categorias, array("class" => "form-control")) ?>
 		<?php echo $form->error($model, 'categoria_id'); ?>
 	</div>
 
