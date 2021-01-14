@@ -57,12 +57,18 @@ class PostController extends Controller
 
 		$comentario = new Comentario;
 
+		$criteria = new CDbCriteria();
+
+		$criteria->with = array("comentarios" => [
+			"limit" => 1,
+			"order" => "comentarios.id desc"
+		]);
+		$criteria->alias = "posts";
+		$criteria->condition = "posts.id = $id";
+		$post = Post::model()->find($criteria);
+
 		$this->render('view', array(
-			'model' => $this->loadModel($id)->with(array(
-				"comentarios" => array(
-					"order" => "data ASC"
-				)
-			)),
+			'model' => $post,
 			'comentario' => $comentario,
 			"newRecord" => $new
 		));
