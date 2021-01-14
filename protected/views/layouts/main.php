@@ -49,9 +49,9 @@
 		</div>
 
 	</nav>
-	<div class="container min-vh-100" id="page">
-		<?php if (isset($this->breadcrumbs)) : ?>
-			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+	<div class="container min-vh-100 my-3" id="page">
+		<?php if (isset($this->breadcrumbs) && !empty($this->breadcrumbs)) : ?>
+			<?php $this->widget('Breadcrumb', array(
 				'links' => $this->breadcrumbs,
 			)); ?>
 			<!-- breadcrumbs -->
