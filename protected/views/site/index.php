@@ -54,7 +54,7 @@ $this->pageTitle = Yii::app()->name;
 											<?= $post->titulo ?>
 										</h5>
 										<p class="mb-0">
-											<?= $post->conteudo; ?>
+											<?= strlen($post->conteudo) > 25 ? substr($post->conteudo, 0, 25) . "..." : $post->conteudo ?>
 										</p>
 									</div>
 									<div class="mt-1">
