@@ -1,5 +1,5 @@
 <div class="col-12 my-1 col-md-6 col-lg-4 animate__animated animate__fadeInUp">
-	<div class="card shadow">
+	<div class="card h-100 shadow">
 		<div class="card-body">
 			<div class="card-content">
 				<h4>
@@ -11,7 +11,12 @@
 						<?= $data->categoria->nome ?>
 					</small>
 				</p>
-				<?= $data->conteudo; ?>
+				<h5>
+					<?= $data->titulo ?>
+				</h5>
+				<p class="mb-0">
+					<?= $data->conteudo; ?>
+				</p>
 				<div class="mt-1">
 					<a href="<?= Yii::app()->createUrl("post/view", array("id" => $data->id)) ?>">
 						Ver mais
