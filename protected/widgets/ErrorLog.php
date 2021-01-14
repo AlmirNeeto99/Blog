@@ -5,7 +5,7 @@ class ErrorLog extends CWidget
     public $errors;
     public function init()
     {
-        $this->renderFile("error_log.php", [
+        $this->renderFile("templates/error_log.php", [
             "errors" => $this->errors
         ]);
     }
