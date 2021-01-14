@@ -41,7 +41,7 @@ class Comentario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('post_id, texto, autor, data', 'required'),
+			array('post_id, texto, autor', 'required'),
 			array('post_id', 'length', 'max'=>10),
 			array('texto', 'length', 'max'=>150),
 			array('autor', 'length', 'max'=>255),
