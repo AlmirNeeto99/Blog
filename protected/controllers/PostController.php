@@ -52,10 +52,11 @@ class PostController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView($id, $new = false)
 	{
 		$this->render('view', array(
 			'model' => $this->loadModel($id),
+			"newRecord" => $new
 		));
 	}
 
@@ -73,7 +74,7 @@ class PostController extends Controller
 		if (isset($_POST['Post'])) {
 			$model->attributes = $_POST['Post'];
 			if ($model->save())
-				$this->redirect(array('view', 'id' => $model->id));
+				$this->redirect(array('view', 'id' => $model->id, "new" => true));
 		}
 
 		$categorias = Categoria::model()->findAll();
@@ -83,7 +84,7 @@ class PostController extends Controller
 		];
 
 		foreach ($categorias as $categoria) {
-			$categoriasSelect=array_merge($categoriasSelect, [$categoria->id => $categoria->nome]);
+			$categoriasSelect[$categoria->id] = $categoria->nome;
 		}
 
 		$this->render('create', array(
