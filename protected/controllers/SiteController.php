@@ -30,23 +30,14 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 
-		$posts = new CActiveDataProvider(
-			'Post',
-			array(
-				"criteria" => array(
-					"order" => "id DESC",
-					"offset" => 0,
-					"limit" => 9,
-					"with" => "comentariosCount"
-				),
-				"pagination" => array(
-					"pageSize" => 9
-				),
+		$criteria = new CDbCriteria();
+		$criteria->limit = 12;
+		$criteria->order = "data DESC";
+		$criteria->with = array("comentariosCount");
 
-			)
-		);
+		$posts = Post::model()->findAll($criteria);
 		$this->render('index', [
-			"posts" => $posts->getData()
+			"posts" => $posts
 		]);
 	}
 
