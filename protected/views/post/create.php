@@ -3,18 +3,15 @@
 /* @var $model Post */
 
 $this->breadcrumbs = array(
-	'Posts' => array('index'),
+	'Posts' => array('post/index'),
 	'Cadastrar',
 );
-
-$this->menu = array(
-	array('label' => 'List Post', 'url' => array('index')),
-	array('label' => 'Manage Post', 'url' => array('admin')),
-);
 ?>
-
-<h1>Cadastrar Post</h1>
+<div class="row">
+	<div class="col-12">
+		<h1>Cadastrar Post</h1>
+	</div>
+</div>
 
 <?php $this->widget("Divider"); ?>
-
 <?php echo $this->renderPartial('_form', array('model' => $model, "categorias" => $categorias)); ?>
