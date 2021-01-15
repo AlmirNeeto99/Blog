@@ -5576,3 +5576,47 @@ REQUEST_URI=/index.php?r=post/update&id=1
 in /home/conexa-dev-05/Documentos/conexa/protected/views/post/_form.php (20)
 in /home/conexa-dev-05/Documentos/conexa/protected/views/post/update.php (21)
 in /home/conexa-dev-05/Documentos/conexa/protected/controllers/PostController.php (132)
+2021/01/15 13:25:54 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "index". in /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CWebApplication.php(142): CWebApplication->runController('index')
+#1 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/conexa-dev-05/Documentos/conexa/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=index
+HTTP_REFERER=http://127.0.0.1:8000/index.php?r=post/create
+---
+2021/01/15 13:26:38 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "index". in /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CWebApplication.php(142): CWebApplication->runController('index')
+#1 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/conexa-dev-05/Documentos/conexa/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=index
+HTTP_REFERER=http://127.0.0.1:8000/index.php?r=post/create
+---
+2021/01/15 14:13:34 [error] [php] Object of class Divider could not be converted to string (/home/conexa-dev-05/Documentos/conexa/protected/views/site/index.php:14)
+Stack trace:
+#0 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CController.php(870): SiteController->renderFile()
+#1 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CController.php(783): SiteController->renderPartial()
+#2 /home/conexa-dev-05/Documentos/conexa/protected/controllers/SiteController.php(40): SiteController->render()
+#3 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#4 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CController.php(287): SiteController->runAction()
+#6 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#7 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CWebApplication.php(283): SiteController->run()
+#8 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#9 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /home/conexa-dev-05/Documentos/conexa/index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in /home/conexa-dev-05/Documentos/conexa/protected/views/site/index.php (14)
+in /home/conexa-dev-05/Documentos/conexa/protected/controllers/SiteController.php (40)
+in /home/conexa-dev-05/Documentos/conexa/index.php (13)
+2021/01/15 14:51:18 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "index". in /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/web/CWebApplication.php(142): CWebApplication->runController('index')
+#1 /home/conexa-dev-05/Downloads/yii-1.1.12/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/conexa-dev-05/Documentos/conexa/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=index
+HTTP_REFERER=http://127.0.0.1:8000/index.php?r=post/create
+---
