@@ -95,7 +95,7 @@ $this->pageTitle = Yii::app()->name;
 							Clique no botão abaixo para verificar nossa listagem completa
 						</p>
 						<div class="text-center">
-							<a href="<?= Yii::app()->createUrl("post") ?>" class="btn btn-outline-conexa-light mx-auto">
+							<a href="<?= Yii::app()->createUrl("post") ?>" class="btn btn-outline-conexa mx-auto">
 								Ver mais
 							</a>
 						</div>
