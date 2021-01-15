@@ -19,6 +19,7 @@
 				</p>
 				<div class="mt-1">
 					<a href="<?= Yii::app()->createUrl("post/view", array("id" => $data->id)) ?>">
+						<i class="fa fa-eye"></i>
 						Ver mais
 					</a>
 				</div>
