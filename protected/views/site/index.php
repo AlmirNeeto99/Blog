@@ -10,8 +10,8 @@ $this->pageTitle = Yii::app()->name;
 			<h1 class="text-center">
 				<?php echo CHtml::encode(Yii::app()->name); ?>
 			</h1>
+			<?php $this->widget("Divider", array("size" => "large")) ?>
 		</div>
-		<?php $this->widget("Divider", array("size" => "large")) ?>
 	</div>
 	<div class="row">
 		<div class="col-12 my-2">
