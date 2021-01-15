@@ -1,6 +1,6 @@
 $theme-colors: (
-  "conexa": #ea824b,
+  "conexa": #f1803b,
   "conexa-light": #e47438b5,
-);
+)!default;
 
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
