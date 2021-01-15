@@ -4,14 +4,14 @@
 $this->pageTitle = Yii::app()->name;
 ?>
 
-<main class="my-4">
+<main class="my-4 container">
 	<div class="row">
 		<div class="col-12">
 			<h1 class="text-center">
 				<?php echo CHtml::encode(Yii::app()->name); ?>
 			</h1>
 		</div>
-		<div class="col-12 col-md-6 border-bottom border-conexa mx-auto my-3"></div>
+		<?php $this->widget("Divider", array("size" => "large")) ?>
 	</div>
 	<div class="row">
 		<div class="col-12 my-2">
